@@ -14,7 +14,7 @@ export default class App extends Component {
           <View style={styles.titleLine}>
             <Text style={styles.eduText}>
               Edu
-            </Text>
+            git</Text>
             <Text style={styles.setButtonAnat}>
               Anatomy
             </Text>
