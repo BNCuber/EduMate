@@ -10,27 +10,52 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+
         <View style={styles.homeScreen}>
+
           <View style={styles.titleLine}>
-            <Text style={styles.eduText}>
-              Edu
-            git</Text>
-            <Text style={styles.setButtonAnat}>
-              Anatomy
+            <View style={styles.topText}>
+              <Text style={styles.eduText}>
+                Edu
+              </Text>
+            </View>
+
+            <View style={styles.bottomText}>
+
+              <Text style={styles.mateText}>
+                  Mate
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.setButtonAnat}>
+            <Text style={styles.text}>
+              Computer Science
             </Text>
           </View>
 
+          
+
           <View style={styles.setButtonGeo}>
-            <Text style={styles.geoText}>
+            <Text style={styles.text}>
               Geography
             </Text>
           </View>
 
           <View style={styles.setButtonCS}>
-            <Text style={styles.csText}>
+            <Text style={styles.text}>
               Computer Science
             </Text>
           </View>
+
+
+          <View style={styles.setAddButton}>
+            <Text style={styles.text}>
+              + Add a new Set
+            </Text>
+          </View>
+
+          
         </View>
       </View>
     );
@@ -40,61 +65,63 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
   homeScreen: {
     flex: 1,
-    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1,
   },
+
+  topText: {
+    height: deviceHeight/4,
+    width: (deviceWidth*2)/3,
+    textAlign: "center",
+    borderWidth: 1,
+  },
+
+  bottomText: {
+    borderWidth: 1,
+  },
+
+
   titleLine: {
-    flexDirection: 'row',
-    marginBottom: 20,
+    flexDirection: 'column',
+    marginTop: 10,
+    borderWidth: 1,
+    width: (deviceWidth*2)/3,
+
   },
   setButtonAnat: {
     borderWidth: 1,
-    borderRadius: 50,
-    borderColor: 'gray',
-    width: deviceWidth * 0.99,
-    height: deviceHeight / 3,
-    backgroundColor: 'red',
-    textAlign: 'center',
-    textAlignVertical: 'center',
+    
   },
   setButtonGeo: {
     borderWidth: 1,
-    borderRadius: 50,
-    borderColor: 'gray',
-    width: deviceWidth * 0.99,
-    height: deviceHeight / 3,
-    backgroundColor: 'blue',
-    justifyContent: 'center',
+    
   },
   setButtonCS: {
     borderWidth: 1,
-    borderRadius: 50,
-    borderColor: 'gray',
-    width: deviceWidth * 0.99,
-    height: deviceHeight / 3,
-    backgroundColor: 'yellow',
-    justifyContent: 'center',
+    
   },
   eduText: {
     fontSize: 24,
     marginRight: 10,
-    color: 'white',
+    color: 'black',
   },
-  geoText: {
-    fontSize: 24,
-    color: 'white',
-    textAlign: 'center',
+  mateText: {
+
   },
-  csText: {
-    fontSize: 24,
-    color: 'white',
-    textAlign: 'center',
+
+  text: {
+
+
+  },
+
+  setAddButton: {
+
+    borderWidth: 1,
   },
 });
