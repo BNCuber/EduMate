@@ -76,14 +76,20 @@ const styles = StyleSheet.create({
   },
 
   topText: {
-    height: deviceHeight/4,
+    height: 100,
     width: (deviceWidth*2)/3,
-    textAlign: "center",
+    textAlign: 'center',
     borderWidth: 1,
+    alignItems: 'center',
   },
 
   bottomText: {
     borderWidth: 1,
+    width: (deviceWidth*2)/3,
+    height: 65,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: deviceHeight/8,
   },
 
 
@@ -96,32 +102,51 @@ const styles = StyleSheet.create({
   },
   setButtonAnat: {
     borderWidth: 1,
+    width: (deviceWidth*2)/3,
+    height: deviceHeight/8,
+    alignItems: 'center',
+    justifyContent: 'center',
     
   },
   setButtonGeo: {
     borderWidth: 1,
-    
+    width: (deviceWidth*2)/3,
+    height: deviceHeight/8,
+    alignItems: 'center',
+    justifyContent: 'center',
+
   },
   setButtonCS: {
     borderWidth: 1,
-    
+    width: (deviceWidth*2)/3,
+    height: deviceHeight/8,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   eduText: {
-    fontSize: 24,
-    marginRight: 10,
+    fontSize: 75,
     color: 'black',
+    fontSize: 100,
+    fontWeight: 'bold',
+
   },
   mateText: {
+    fontSize: 75,
+    fontWeight: 'bold',
 
   },
 
   text: {
-
+    fontWeight: 'bold',
+    fontSize: 75,
 
   },
 
   setAddButton: {
-
     borderWidth: 1,
+    width: (deviceWidth*2)/3,
+    height: deviceHeight/8,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
