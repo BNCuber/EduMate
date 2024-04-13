@@ -79,13 +79,15 @@ export default class App extends Component {
                     Mate
                 </Text>
             </View>
-                <ScrollView style  = {styles.scrollwViewContainer}>
+                <ScrollView style  = {styles.scrollViewContainer}>
                   
                     <TouchableHighlight onPress={this.handleAnatPageDisplay}>
                       <View style={styles.setButtonAnat}>
-                        <Text style={styles.text}>
-                          Anatomy
-                        </Text>
+                        <View style={styles.titleBox}>
+                          <Text style={styles.text}>
+                            Anatomy
+                          </Text>
+                        </View>
                       </View>
                     </TouchableHighlight>
 
@@ -205,7 +207,7 @@ const styles = StyleSheet.create({
 
   topText: {
     height: 100,
-    width: deviceWidth*.9,
+    width: deviceWidth*9,
     textAlign: 'center',
     borderWidth: 1,
     alignItems: 'center',
@@ -231,20 +233,35 @@ const styles = StyleSheet.create({
 
   },
 
-  scrollwViewContainer:{
+  scrollViewContainer:{
     height:deviceHeight/1.5,
+    
     
   },
   setButtonAnat: {
     borderWidth: 1,
-    width: deviceWidth*.9,
-    height: deviceHeight/8,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: (deviceWidth/5)*4,
+    height: (deviceHeight/8)*1.5,
+    marginTop: deviceHeight/20,
     borderRadius: 25,
     backgroundColor:'#f0b4f4',
 
   },
+
+  titleBox: {
+    marginLeft: deviceWidth/30,
+    marginTop: deviceHeight/30,
+    borderWidth: 1,
+    width: deviceWidth/2.5,
+    height: deviceHeight/9,
+    borderRadius: 20,
+    backgroundColor: 'rgba(242, 242, 242, .64)',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+
+  },
+
   setButtonGeo: {
     borderWidth: 1,
     width: deviceWidth*.9,
@@ -278,7 +295,7 @@ const styles = StyleSheet.create({
 
   text: {
     fontWeight: 'bold',
-    fontSize: 75,
+    fontSize: deviceHeight/25,
 
   },
 
