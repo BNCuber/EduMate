@@ -65,10 +65,16 @@ export default class App extends Component {
       })
     }
 
+    
+  
+
+
   render() {
     return (
    
       <View style={styles.container}>
+
+
         <View style = {{ display: this.state.homePageDisplay }}>
           <View style={styles.homeScreen}>
             <View style={styles.titleLine}>
@@ -90,7 +96,7 @@ export default class App extends Component {
                     <TouchableHighlight 
                       style={styles.buttonWrapper}
                       onPress={this.handleJavaPageDisplay}
-                      
+                      underlayColor="#FFFFFF"
                     >
                       <View style={styles.setButtonCS}>
                         <View style={styles.titleBox}>
@@ -104,6 +110,7 @@ export default class App extends Component {
                     <TouchableHighlight 
                       style={styles.buttonWrapper}
                       onPress={this.handleGeoPageDisplay}
+                      underlayColor="#FFFFFF"
                     >
                       <View style={styles.setButtonGeo}>
                         <View style={styles.titleBox}>
@@ -117,6 +124,7 @@ export default class App extends Component {
                     <TouchableHighlight 
                       style={styles.buttonWrapper}
                       onPress={this.handleAnatPageDisplay}
+                      underlayColor="#FFFFFF"
                     >
                       <View style={styles.setButtonAnat}>
                         <View style={styles.titleBox}>
@@ -131,11 +139,12 @@ export default class App extends Component {
                     <TouchableHighlight 
                         style={styles.buttonWrapper}
                         onPress={this.handleNewSetDisplay}
+                        underlayColor="#FFFFFF"
                     >
                     <View style={styles.setAddButton}>                      
                       
                           <Text style={styles.text}>
-                            + Add a new Set
+                            + 
                           </Text>
                       
                     </View>
@@ -144,6 +153,7 @@ export default class App extends Component {
                 </ScrollView> 
           </View>  
         </View>
+
        
 
         <View style={{ display: this.state.javaPageDisplay }}>
@@ -154,7 +164,7 @@ export default class App extends Component {
                 ← Back to Home
               </Text>
             </TouchableHighlight>
-            </View>
+          </View>
             <View style={styles.CSText}>
               Java
             </View>
@@ -238,9 +248,10 @@ const styles = StyleSheet.create({
   buttonWrapper:{
    alignItems: 'center',
    justifyContent: 'center', 
-  
-
+   borderRadius: 25,
    overflow: 'hidden',
+
+
 
   },
 
