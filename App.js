@@ -79,9 +79,45 @@ export default class App extends Component {
                     Mate
                 </Text>
             </View>
-                <ScrollView style  = {styles.scrollViewContainer}>
+
+                <ScrollView 
+                  style  = {styles.scrollViewContainer}
+                  showsVerticalScrollIndicator={false}
+                >
                   
-                    <TouchableHighlight onPress={this.handleAnatPageDisplay}>
+                    
+
+                    <TouchableHighlight 
+                      style={styles.buttonWrapper}
+                      onPress={this.handleJavaPageDisplay}
+                      
+                    >
+                      <View style={styles.setButtonCS}>
+                        <View style={styles.titleBox}>
+                          <Text style={styles.text}>
+                            Programming
+                          </Text>
+                        </View>
+                      </View>
+                    </TouchableHighlight>
+
+                    <TouchableHighlight 
+                      style={styles.buttonWrapper}
+                      onPress={this.handleGeoPageDisplay}
+                    >
+                      <View style={styles.setButtonGeo}>
+                        <View style={styles.titleBox}>
+                          <Text style={styles.text}>
+                            Geography
+                          </Text>
+                        </View>
+                      </View>
+                    </TouchableHighlight>
+                    
+                    <TouchableHighlight 
+                      style={styles.buttonWrapper}
+                      onPress={this.handleAnatPageDisplay}
+                    >
                       <View style={styles.setButtonAnat}>
                         <View style={styles.titleBox}>
                           <Text style={styles.text}>
@@ -90,69 +126,26 @@ export default class App extends Component {
                         </View>
                       </View>
                     </TouchableHighlight>
-
-                    <TouchableHighlight onPress={this.handleGeoPageDisplay}>
-                      <View style={styles.setButtonGeo}>
-                        <Text style={styles.text}>
-                          Geography
-                        </Text>
-                      </View>
-                    </TouchableHighlight>
                     
-                    <TouchableHighlight onPress={this.handleJavaPageDisplay}>
-                      <View style={styles.setButtonCS}>
-                        <Text style={styles.text}>
-                          Computer Science
-                        </Text>
-                      </View>
-                    </TouchableHighlight>
 
-                    <View style={styles.setAddButton}>
-                      <TouchableHighlight onPress={this.handleNewSetDisplay}>
-                        <Text style={styles.text}>
-                          + Add a new Set
-                        </Text>
-                      </TouchableHighlight>
+                    <TouchableHighlight 
+                        style={styles.buttonWrapper}
+                        onPress={this.handleNewSetDisplay}
+                    >
+                    <View style={styles.setAddButton}>                      
+                      
+                          <Text style={styles.text}>
+                            + Add a new Set
+                          </Text>
+                      
                     </View>
-                  
+
+                    </TouchableHighlight>
                 </ScrollView> 
           </View>  
         </View>
        
-        <View style={{ display: this.state.anatPageDisplay }}>
-          <View style={styles.anatPage}>
-          <View style={styles.goButt}>
-            <TouchableHighlight onPress={this.handleHomePageDisplay}>
-              <Text style={styles.homeText}>
-                ← Back to Home
-              </Text>
-            </TouchableHighlight>
-            </View>
-            <View style={styles.anatText}>
-              Anatomy
-            </View>
-            <View style={styles.studyText}>
-              Study Set
-            </View>
-          </View>
-        </View>
-        <View style={{ display: this.state.geoPageDisplay }}>
-          <View style={styles.geoPage}>
-          <View style={styles.goButt}>
-            <TouchableHighlight onPress={this.handleHomePageDisplay}>
-              <Text style={styles.homeText}>
-                ← Back to Home
-              </Text>
-            </TouchableHighlight>
-            </View>
-            <View style={styles.GeoText}>
-              Geography
-            </View>
-            <View style={styles.studyText}>
-              Study Set
-            </View>
-          </View>
-        </View>
+
         <View style={{ display: this.state.javaPageDisplay }}>
           <View style={styles.javaPage}>
           <View style={styles.goButt}>
@@ -170,6 +163,43 @@ export default class App extends Component {
             </View>
           </View>
         </View>
+
+        <View style={{ display: this.state.geoPageDisplay }}>
+          <View style={styles.geoPage}>
+          <View style={styles.goButt}>
+            <TouchableHighlight onPress={this.handleHomePageDisplay}>
+              <Text style={styles.homeText}>
+                ← Back to Home
+              </Text>
+            </TouchableHighlight>
+            </View>
+            <View style={styles.GeoText}>
+              Geography
+            </View>
+            <View style={styles.studyText}>
+              Study Set
+            </View>
+          </View>
+        </View>
+
+        <View style={{ display: this.state.anatPageDisplay }}>
+          <View style={styles.anatPage}>
+          <View style={styles.goButt}>
+            <TouchableHighlight onPress={this.handleHomePageDisplay}>
+              <Text style={styles.homeText}>
+                ← Back to Home
+              </Text>
+            </TouchableHighlight>
+            </View>
+            <View style={styles.anatText}>
+              Anatomy
+            </View>
+            <View style={styles.studyText}>
+              Study Set
+            </View>
+          </View>
+        </View>
+
         <View style={{ display: this.state.newSetDisplay }}>
           <View style={styles.newPage}>
             <View style={styles.goButt}>
@@ -205,6 +235,15 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
 
+  buttonWrapper:{
+   alignItems: 'center',
+   justifyContent: 'center', 
+  
+
+   overflow: 'hidden',
+
+  },
+
   topText: {
     height: 100,
     width: deviceWidth*9,
@@ -212,6 +251,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     alignItems: 'center',
   },
+
+  
 
   bottomText: {
     borderWidth: 1,
@@ -239,20 +280,22 @@ const styles = StyleSheet.create({
     
   },
   setButtonAnat: {
-    borderWidth: 1,
+    
     width: (deviceWidth/5)*4,
     height: (deviceHeight/8)*1.5,
     marginTop: deviceHeight/20,
     borderRadius: 25,
     backgroundColor:'#f0b4f4',
 
+    
+
   },
 
   titleBox: {
     marginLeft: deviceWidth/30,
     marginTop: deviceHeight/30,
-    borderWidth: 1,
-    width: deviceWidth/2.5,
+    
+    width: deviceWidth/2.15,
     height: deviceHeight/9,
     borderRadius: 20,
     backgroundColor: 'rgba(242, 242, 242, .64)',
@@ -260,26 +303,29 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
 
 
+
   },
 
   setButtonGeo: {
-    borderWidth: 1,
-    width: deviceWidth*.9,
-    height: deviceHeight/8,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:'#93e9f1',
+    
+    width: (deviceWidth/5)*4,
+    height: (deviceHeight/8)*1.5,
+    marginTop: deviceHeight/20,
     borderRadius: 25,
+    backgroundColor:'#68A5FF',
+    
   },
+
   setButtonCS: {
-    borderWidth: 1,
-    width: deviceWidth*.9,
-    height: deviceHeight/8,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:'#68a5ff',
+    
+    width: (deviceWidth/5)*4,
+    height: (deviceHeight/8)*1.5,
+    marginTop: deviceHeight/20,
     borderRadius: 25,
+    backgroundColor:'#93E9F2',
+    
   },
+
   eduText: {
    
     color: '#BDE0FE',
@@ -313,12 +359,14 @@ const styles = StyleSheet.create({
   },
 
   setAddButton: {
-    borderWidth: 1,
-    width: (deviceWidth*2)/3,
-    height: deviceHeight/8,
+    
+    width: (deviceWidth/5)*4,
+    height: (deviceHeight/8)*1.5,
     alignItems: 'center',
     justifyContent: 'center',
-    color:"#E3D5CA",
+    marginTop: deviceHeight/20,
     borderRadius: 25,
+    backgroundColor:'#F3D0D7',
+    
   },
 });
