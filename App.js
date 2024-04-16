@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, View, StyleSheet, Image, TextInput, ImageBackground, TouchableHighlight, Alert, Dimensions, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
+import { LinearGradient } from 'react-native';
 
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
@@ -136,25 +137,51 @@ export default class App extends Component {
                     </TouchableHighlight>
                     
 
-                    <TouchableHighlight 
-                        style={styles.buttonWrapper}
-                        onPress={this.handleNewSetDisplay}
-                        underlayColor="#FFFFFF"
-                    >
-                    <View style={styles.setAddButton}>                      
-                      
-                          <Text style={styles.text}>
-                            + 
-                          </Text>
-                      
-                    </View>
+                    
 
-                    </TouchableHighlight>
+                    
                 </ScrollView> 
+
+                
           </View>  
+
+          
+
         </View>
 
-       
+
+        <View style={styles.navbar}>
+          <View style={styles.homebutton}>
+
+          </View>
+
+          <TouchableHighlight 
+              style={styles.buttonWrapper}
+              onPress={this.handleNewSetDisplay}
+              underlayColor="#FFFFFF"
+          >
+            <View style={styles.addButtonWrapper}>                                  
+              <Text style={styles.text}>
+                + 
+              </Text>   
+            </View>
+          </TouchableHighlight>
+
+          <View style={styles.libraryButton}>
+            <View style={styles.library}>
+
+            </View>
+
+            <Text style={styles.yourLibrary}>
+              Your Collection
+            </Text>
+
+          </View>
+
+          
+        </View>
+
+
 
         <View style={{ display: this.state.javaPageDisplay }}>
           <View style={styles.javaPage}>
@@ -236,13 +263,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   homeScreen: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 1,
+    
+  },
+
+  navbar: {
+
+  },
+  
+  homebutton: {
+
+  },
+
+  library: {
+
+  },
+
+  libraryButton: {
+
+  },
+
+  yourLibrary: {
+
   },
 
   buttonWrapper:{
@@ -251,9 +298,15 @@ const styles = StyleSheet.create({
    borderRadius: 25,
    overflow: 'hidden',
 
+  },
 
+  addButtonWrapper: {
+      borderWidth: 1,
+      borderRadius: 50,
+      
 
   },
+
 
   topText: {
     height: 100,
@@ -261,6 +314,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderWidth: 1,
     alignItems: 'center',
+    
   },
 
   
