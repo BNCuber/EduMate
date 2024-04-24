@@ -151,34 +151,47 @@ export default class App extends Component {
 
 
         <View style={styles.navbar}>
-          <View style={styles.homebutton}>
-
-          </View>
+          
 
           <TouchableHighlight 
               style={styles.buttonWrapper}
               onPress={this.handleNewSetDisplay}
               underlayColor="#FFFFFF"
           >
-            <View style={styles.addButtonWrapper}>                                  
+
+            <View style={styles.addButtonWrapper}> 
+              <View style={styles.homebutton}>
+
+              </View>                                
               <Text style={styles.text}>
                 + 
               </Text>   
             </View>
+  
           </TouchableHighlight>
 
+
+          <TouchableHighlight 
+              style={styles.buttonWrapper}
+              onPress={this.handleNewSetDisplay}
+              underlayColor="#FFFFFF"
+          >
+
           <View style={styles.libraryButton}>
-            <View style={styles.library}>
+              <View style={styles.library}>
+                  *
+              </View>
 
-            </View>
+              <Text style={styles.yourLibrary}>
+                Your Collection
+              </Text>
 
-            <Text style={styles.yourLibrary}>
-              Your Collection
-            </Text>
+           </View>
 
-          </View>
+          </TouchableHighlight>
 
-          
+
+
         </View>
 
 
@@ -273,23 +286,27 @@ const styles = StyleSheet.create({
   },
 
   navbar: {
-
+      flexDirection: 'row',
+      borderWidth: 1,
+      margin: 'auto',
+      width: (deviceWidth/2.25)*2,
+      height: deviceWidth/16,
   },
-  
-  homebutton: {
 
+  homebutton: {
+    borderWidth: 1,
   },
 
   library: {
-
+    borderWidth: 1,
   },
 
   libraryButton: {
-
+    borderWidth: 1,
   },
 
   yourLibrary: {
-
+    borderWidth: 1,
   },
 
   buttonWrapper:{
