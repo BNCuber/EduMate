@@ -136,10 +136,6 @@ export default class App extends Component {
                       </View>
                     </TouchableHighlight>
                     
-
-                    
-
-                    
                 </ScrollView> 
 
                 
