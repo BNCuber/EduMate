@@ -1,20 +1,50 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { AppRegistry, Text, View, Image, TextInput, ImageBackground, TouchableHighlight, Alert, ScrollView } from 'react-native';
 import styles from './styles';
 
 export default class GeoPage extends Component {
-  state = {
-    // Geo page state variables
-  };
+  state  =  {
+    homePageDisplay: 'block',
+    anatPageDisplay: 'none',
+    geoPageDisplay: 'none',
+    javaPageDisplay: 'none',
+    newSetDisplay: 'none',
+}
 
-  // Geo page methods...
+handleGeoPageDisplay = () => {
+  this.setState({
+    homePageDisplay:'none',
+    anatPageDisplay:'none',
+    geoPageDisplay:'block',
+    javaPageDisplay:'none',
+    NewSetDisplay: 'none',
+  })
+}
+
+
 
   render() {
     return (
       <View style={styles.container}>
         <View style={{ display: this.state.geoPageDisplay }}>
-          {/* Render Geo Page Content */}
+
+        <View style={styles.geoPage}>
+          <View style={styles.goButt}>
+            <TouchableHighlight onPress={this.handleHomePageDisplay}>
+              <Text style={styles.homeText}>
+                ← Back to Home
+              </Text>
+            </TouchableHighlight>
+            </View>
+            <View style={styles.GeoText}>
+              Geography
+            </View>
+            <View style={styles.studyText}>
+              Study Set
+            </View>
+          </View>
         </View>
+
       </View>
     );
   }
