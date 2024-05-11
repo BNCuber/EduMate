@@ -3,42 +3,16 @@ import { View, Text, TouchableHighlight } from 'react-native';
 import styles from './styles';
 
 export default class AnatPage extends Component {
-    state = {
-        homePageDisplay: 'block',
-        anatPageDisplay: 'none',
-        geoPageDisplay: 'none',
-        javaPageDisplay: 'none',
-        newSetDisplay: 'none',
-    }
-
-    handleHomePageDisplay = () => {
-        this.setState({
-            homePageDisplay: 'block',
-            anatPageDisplay: 'none',
-            geoPageDisplay: 'none',
-            javaPageDisplay: 'none',
-            newSetDisplay: 'none',
-        })
-    }
-
-    handleAnatPageDisplay = () => {
-        this.setState({
-            homePageDisplay: 'none',
-            anatPageDisplay: 'block',
-            geoPageDisplay: 'none',
-            javaPageDisplay: 'none',
-            newSetDisplay: 'none',
-        })
-    }
+   
 
     render() {
+        const {handleHomePageDisplay} = this.props; //set props to use
         return (
             <View style={styles.container}>
-                <View style={{ display: this.state.anatPageDisplay }}>
-
+            
                     <View style={styles.anatPage}>
                         <View style={styles.goButt}>
-                            <TouchableHighlight onPress={this.handleHomePageDisplay}>
+                            <TouchableHighlight onPress={handleHomePageDisplay}>
                                 <Text style={styles.homeText}>
                                     ← Back to Home
                                 </Text>
@@ -52,7 +26,7 @@ export default class AnatPage extends Component {
                         </View>
                     </View>
 
-                </View>
+                
             </View>
         );
     }

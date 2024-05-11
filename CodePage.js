@@ -3,32 +3,16 @@ import { Text, View, TouchableHighlight } from 'react-native';
 import styles from './styles';
 
 export default class CodePage extends Component {
-    state = {
-        homePageDisplay: 'block',
-        anatPageDisplay: 'none',
-        geoPageDisplay: 'none',
-        javaPageDisplay: 'none',
-        newSetDisplay: 'none',
-    }
-
-    handleJavaPageDisplay = () => {
-        this.setState({
-            homePageDisplay: 'none',
-            anatPageDisplay: 'none',
-            geoPageDisplay: 'none',
-            javaPageDisplay: 'block',
-            newSetDisplay: 'none',
-            //  Test
-        })
-    }
+    
 
     render() {
+        const { handleHomePageDisplay } = this.props; //set props to use
         return (
             <View style={styles.container}>
-                <View style={{ display: this.state.javaPageDisplay }}>
+               
                     <View style={styles.javaPage}>
                         <View style={styles.goButt}>
-                            <TouchableHighlight onPress={this.handleHomePageDisplay}>
+                            <TouchableHighlight onPress={handleHomePageDisplay}>
                                 <Text style={styles.homeText}>
                                     ← Back to Home
                                 </Text>
@@ -41,7 +25,7 @@ export default class CodePage extends Component {
                             Study Set
                         </View>
                     </View>
-                </View>
+              
             </View>
         );
     }
