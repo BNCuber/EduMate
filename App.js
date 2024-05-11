@@ -7,6 +7,7 @@ import AnatPage from './AnatPage'; // Corrected import
 import Newpage from './Newpage';
 import styles from './styles';
 
+//test
 
 export default class App extends Component {
     state = {
