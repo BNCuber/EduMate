@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { View, Text, TouchableHighlight } from 'react-native';
 import HomePage from './HomePage';
-import JavaPage from './JavaPage';
+import CodePage from './CodePage'; // Corrected import
 import GeoPage from './GeoPage';
+import AnatPage from './AnatPage'; // Corrected import
+import Newpage from './Newpage';
 import styles from './styles';
 
 

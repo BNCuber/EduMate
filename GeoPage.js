@@ -17,7 +17,7 @@ handleGeoPageDisplay = () => {
     anatPageDisplay:'none',
     geoPageDisplay:'block',
     javaPageDisplay:'none',
-    NewSetDisplay: 'none',
+    newSetDisplay: 'none',
   })
 }
 

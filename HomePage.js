@@ -17,7 +17,7 @@ export default class HomePage extends Component {
       anatPageDisplay: 'none',
       geoPageDisplay: 'none',
       javaPageDisplay: 'none',
-      NewSetDisplay: 'none',
+      newSetDisplay: 'none',
     });
   };
 

@@ -17,7 +17,8 @@ handleJavaPageDisplay = () => {
     anatPageDisplay:'none',
     geoPageDisplay:'none',
     javaPageDisplay:'block',
-    NewSetDisplay: 'none',
+    newSetDisplay: 'none',
+   //  Test
   })
 }
 
@@ -25,7 +26,7 @@ handleJavaPageDisplay = () => {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ display: this.state.codePageDisplay }}>
+        <View style={{ display: this.state.javaPageDisplay }}>
 
           <View style={styles.javaPage}>
             <View style={styles.goButt}>
