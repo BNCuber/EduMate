@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, Text, View, Image, TextInput, ImageBackground, TouchableHighlight, Alert, ScrollView } from 'react-native';
 import styles from './styles';
 
+
 export default class HomePage extends Component {
   state = {
     homePageDisplay: 'block',

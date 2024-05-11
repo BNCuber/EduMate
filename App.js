@@ -7,6 +7,7 @@ import AnatPage from './AnatPage';
 import NewPage from './NewPage';
 import styles from './styles';
 
+
 export default class App extends Component {
     state = {
         homePageDisplay: 'block',
