@@ -3,6 +3,7 @@ import { AppRegistry, Text, View, Image, TextInput, ImageBackground, TouchableHi
 import styles from './styles';
 import App from './App';
 
+
 export default class HomePage extends Component {
  
 
