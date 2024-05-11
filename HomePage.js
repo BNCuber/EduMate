@@ -21,6 +21,46 @@ export default class HomePage extends Component {
     });
   };
 
+  handleAnatPageDisplay = () => {
+    this.setState({
+        homePageDisplay: 'none',
+        anatPageDisplay: 'block',
+        geoPageDisplay: 'none',
+        codePageDisplay: 'none',
+        newPageDisplay: 'none',
+    })
+};
+
+handleGeoPageDisplay = () => {
+    this.setState({
+        homePageDisplay: 'none',
+        anatPageDisplay: 'none',
+        geoPageDisplay: 'block',
+        codePageDisplay: 'none',
+        newPageDisplay: 'none',
+    })
+};
+
+handleCodePageDisplay = () => {
+    this.setState({
+        homePageDisplay: 'none',
+        anatPageDisplay: 'none',
+        geoPageDisplay: 'none',
+        codePageDisplay: 'block',
+        newPageDisplay: 'none',
+    })
+};
+
+handleNewPageDisplay = () => {
+    this.setState({
+        homePageDisplay: 'none',
+        anatPageDisplay: 'none',
+        geoPageDisplay: 'none',
+        codePageDisplay: 'none',
+        newPageDisplay: 'block',
+    })
+};
+
   // Other methods...
 
   render() {
@@ -42,11 +82,10 @@ export default class HomePage extends Component {
                   showsVerticalScrollIndicator={false}
                 >
                   
-                    
 
                     <TouchableHighlight 
                       style={styles.buttonWrapper}
-                      onPress={this.handleJavaPageDisplay}
+                      onPress={this.handleCodePageDisplay}
                       underlayColor="#FFFFFF"
                     >
                       <View style={styles.setButtonCS}>
@@ -88,6 +127,36 @@ export default class HomePage extends Component {
                     
                 </ScrollView> 
 
+                <View style={styles.navbar}>
+                    <TouchableHighlight
+                        style={styles.buttonWrapper}
+                        onPress={this.handleNewPageDisplay}
+                        underlayColor="#FFFFFF"
+                    >
+                        <View style={styles.addButtonWrapper}>
+                            <View style={styles.homebutton}>
+                            </View>
+                            <Text style={styles.text}>
+                                +
+                            </Text>
+                        </View>
+                    </TouchableHighlight>
+
+                    <TouchableHighlight
+                        style={styles.buttonWrapper}
+                        onPress={this.handleCodePageDisplay}
+                        underlayColor="#FFFFFF"
+                    >
+                        <View style={styles.libraryButton}>
+                            <View style={styles.library}>
+                                *
+                            </View>
+                            <Text style={styles.yourLibrary}>
+                                Your Collection
+                            </Text>
+                        </View>
+                    </TouchableHighlight>
+                </View>
                 
           </View>  
 
