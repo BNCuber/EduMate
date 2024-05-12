@@ -89,7 +89,7 @@ export default class HomePage extends Component {
                         </View>
                     </TouchableHighlight>
 
-                    <TouchableHighlight
+                     <TouchableHighlight
                         style={styles.buttonWrapper}
                         onPress={this.handleCodePageDisplay}
                         underlayColor="#FFFFFF"
@@ -102,7 +102,8 @@ export default class HomePage extends Component {
                                 Your Collection
                             </Text>
                         </View>
-                    </TouchableHighlight>
+                    </TouchableHighlight> 
+
                 </View>
                 
           </View>  

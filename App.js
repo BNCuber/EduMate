@@ -18,6 +18,9 @@ export default class App extends Component {
                 geoPageDisplay: 'none',
                 javaPageDisplay: 'none',
                 newSetDisplay: 'none',
+                
+                
+
         };
       }
     
@@ -75,15 +78,19 @@ export default class App extends Component {
     };
 
     render() {
+
+        
+
         return (
             <View style={styles.container}>
+                
 
                 <View style = {{display:this.state.homePageDisplay}}>
                         <HomePage 
                         handleCodePageDisplay={this.handleCodePageDisplay}
                         handleGeoPageDisplay={this.handleGeoPageDisplay}
                         handleAnatPageDisplay={this.handleAnatPageDisplay}
-                        //Add more if needed.
+                        
                         />
                 </View>
 
