@@ -16,10 +16,8 @@ export default class App extends Component {
                 homePageDisplay: 'block',
                 anatPageDisplay: 'none',
                 geoPageDisplay: 'none',
-                javaPageDisplay: 'none',
+                codePageDisplay: 'none',
                 newSetDisplay: 'none',
-                
-                
 
         };
       }
@@ -30,7 +28,7 @@ export default class App extends Component {
           homePageDisplay: 'block',
           anatPageDisplay: 'none',
           geoPageDisplay: 'none',
-          javaPageDisplay: 'none',
+          codePageDisplay: 'none',
           newSetDisplay: 'none',
         });
         
@@ -42,7 +40,7 @@ export default class App extends Component {
             anatPageDisplay: 'block',
             geoPageDisplay: 'none',
             codePageDisplay: 'none',
-            newPageDisplay: 'none',
+            newSetDisplay: 'none',
         })
         
     };
@@ -53,7 +51,7 @@ export default class App extends Component {
             anatPageDisplay: 'none',
             geoPageDisplay: 'block',
             codePageDisplay: 'none',
-            newPageDisplay: 'none',
+            newSetDisplay: 'none',
         })
     };
     
@@ -63,7 +61,7 @@ export default class App extends Component {
             anatPageDisplay: 'none',
             geoPageDisplay: 'none',
             codePageDisplay: 'block',
-            newPageDisplay: 'none',
+            newSetDisplay: 'none',
         })
     };
     
@@ -73,7 +71,7 @@ export default class App extends Component {
             anatPageDisplay: 'none',
             geoPageDisplay: 'none',
             codePageDisplay: 'none',
-            newPageDisplay: 'block',
+            newSetDisplay: 'block',
         })
     };
 
@@ -111,7 +109,7 @@ export default class App extends Component {
                         handleHomePageDisplay={this.handleHomePageDisplay}
                         />
                 </View>
- 
+
             </View>
         );
     };
