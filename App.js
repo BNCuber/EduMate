@@ -4,7 +4,7 @@ import HomePage from './HomePage';
 import CodePage from './CodePage';
 import GeoPage from './GeoPage';
 import AnatPage from './AnatPage';
-import NewPage from './NewPage';
+import NewPage from './Newpage';
 import styles from './styles';
 
 
@@ -27,7 +27,7 @@ export default class App extends Component {
           homePageDisplay: 'block',
           anatPageDisplay: 'none',
           geoPageDisplay: 'none',
-          javaPageDisplay: 'none',
+          codePageDisplay: 'none',
           newSetDisplay: 'none',
         });
         

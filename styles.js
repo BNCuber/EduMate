@@ -8,7 +8,18 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
-      justifyContent: 'center'
+
+    },
+    javaContainer: {
+      flex: 1,
+      width: deviceWidth,
+      height: deviceHeight,
+      alignItems: 'center',
+      backgroundColor: '#93E9F2',
+    },
+    javaPage: {
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     homeScreen: {
       flex: 1,
@@ -155,19 +166,19 @@ const styles = StyleSheet.create({
   
     text: {
       fontWeight: 'bold',
-      fontSize: deviceHeight/25,
+      fontSize: deviceHeight / 25,
   
     },
   
     homeText: {
-      fontSize: 30, 
+      fontSize: 20, 
       margin: 5,
     },
     
     goButt: {
       alignSelf: 'start',
-      alignItems: 'left',
-      justifyContent: 'left',
+      alignItems: 'center',
+      justifyContent: 'center',
       borderWidth: 1,
       borderRadius: 25,
     },
@@ -183,6 +194,21 @@ const styles = StyleSheet.create({
       backgroundColor:'#F3D0D7',
       
     },
+
+    RealCS: {
+      fontSize: 115,
+    },
+    
+    RealStudy: {
+      fontSize: 50,
+    },
+
+    CSCover: {
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
   });
 
   export default styles;
