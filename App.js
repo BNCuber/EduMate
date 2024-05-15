@@ -16,8 +16,9 @@ export default class App extends Component {
                 homePageDisplay: 'block',
                 anatPageDisplay: 'none',
                 geoPageDisplay: 'none',
-                javaPageDisplay: 'none',
+                codePageDisplay: 'none',
                 newSetDisplay: 'none',
+
         };
       }
     
@@ -39,7 +40,7 @@ export default class App extends Component {
             anatPageDisplay: 'block',
             geoPageDisplay: 'none',
             codePageDisplay: 'none',
-            newPageDisplay: 'none',
+            newSetDisplay: 'none',
         })
         
     };
@@ -50,7 +51,7 @@ export default class App extends Component {
             anatPageDisplay: 'none',
             geoPageDisplay: 'block',
             codePageDisplay: 'none',
-            newPageDisplay: 'none',
+            newSetDisplay: 'none',
         })
     };
     
@@ -60,7 +61,7 @@ export default class App extends Component {
             anatPageDisplay: 'none',
             geoPageDisplay: 'none',
             codePageDisplay: 'block',
-            newPageDisplay: 'none',
+            newSetDisplay: 'none',
         })
     };
     
@@ -70,20 +71,24 @@ export default class App extends Component {
             anatPageDisplay: 'none',
             geoPageDisplay: 'none',
             codePageDisplay: 'none',
-            newPageDisplay: 'block',
+            newSetDisplay: 'block',
         })
     };
 
     render() {
+
+        
+
         return (
             <View style={styles.container}>
+                
 
                 <View style = {{display:this.state.homePageDisplay}}>
                         <HomePage 
                         handleCodePageDisplay={this.handleCodePageDisplay}
                         handleGeoPageDisplay={this.handleGeoPageDisplay}
                         handleAnatPageDisplay={this.handleAnatPageDisplay}
-                        //Add more if needed.
+                        
                         />
                 </View>
 
@@ -104,7 +109,7 @@ export default class App extends Component {
                         handleHomePageDisplay={this.handleHomePageDisplay}
                         />
                 </View>
- 
+
             </View>
         );
     };
