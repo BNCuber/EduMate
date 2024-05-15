@@ -100,13 +100,15 @@ const styles = StyleSheet.create({
       marginTop: deviceHeight/20,
       borderRadius: 25,
       backgroundColor:'#f0b4f4',
-  
+      justifyContent:'center',
+      alignItems:'center',
       
   
     },
   
     titleBox: {
-      marginLeft: deviceWidth/30,
+      
+      
       marginTop: deviceHeight/30,
       
       width: deviceWidth/2.15,
@@ -127,7 +129,8 @@ const styles = StyleSheet.create({
       marginTop: deviceHeight/20,
       borderRadius: 25,
       backgroundColor:'#68A5FF',
-      
+      justifyContent:'center',
+      alignItems:'center',
     },
   
     setButtonCS: {
@@ -137,7 +140,8 @@ const styles = StyleSheet.create({
       marginTop: deviceHeight/20,
       borderRadius: 25,
       backgroundColor:'#93E9F2',
-      
+      justifyContent:'center',
+      alignItems:'center',
     },
   
     eduText: {
