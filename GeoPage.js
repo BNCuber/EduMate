@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image, Modal, Button } from 'react-native
 import styles from './styles';
 
 import Texas from './assets/Texas.png';
-import LocationPin from '.assets/LocationPin.png';
+import LocationPin from './assets/LocationPin.png';
 
 
 const CardPopup = ({ visible, card, onClose }) => {
@@ -96,11 +96,10 @@ export default class AnatPage extends Component {
         return (
             <View style={styles.container}>
 
-                    <ImageBackground
-                        source={{ uri: '' }}
+                    <Image
+                        source={{Texas}}
                     >
-
-                    </ImageBackground>
+                    </Image>
 
 
 
