@@ -1,9 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { imageH } from './CodePage'
+import imageH from './CodePage'
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
-const imageHeight = imageH;
+var imageHeight = imageH;
 
 
 const styles = StyleSheet.create({
@@ -337,6 +337,32 @@ const styles = StyleSheet.create({
     width: deviceWidth / 10,
     height: imageHeight,
   },
+  row: {
+    flexDirection: 'row',
+    height: imageHeight / 8,
+    width: 2 * deviceWidth / 3,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+},
+modalContent: {
+    width: 300,
+    padding: 20,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    alignItems: 'center',
+},
+modalText: {
+    fontSize: 18,
+    marginBottom: 20,
+},
+closeText: {
+    fontSize: 16,
+    color: '#007BFF',
+},
 
   bodyPartColumn: {
     alignItems: 'center',
