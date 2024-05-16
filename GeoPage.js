@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Modal, Button, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal, Button, Dimensions, ImageBackground } from 'react-native';
 import styles from './styles';
 
 import Texas from './assets/Texas.png';
@@ -8,23 +8,29 @@ import LocationPin from './assets/LocationPin.png';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
+// Define the coordinates for each location
+const locationCoordinates = {
+    Houston: { x: deviceWidth * 0.2, y: deviceHeight * 0.2 },
+    DallasFW: { x: deviceWidth * 0.3, y: deviceHeight * 0.15 },
+    Austin: { x: deviceWidth * 0.25, y: deviceHeight * 0.3 },
+    SanAntonio: { x: deviceWidth * 0.15, y: deviceHeight * 0.35 },
+    ElPaso: { x: deviceWidth * 0.35, y: deviceHeight * 0.4 },
+    // Add more locations and their coordinates as needed
+};
+
 const CardPopup = ({ visible, card, onClose }) => {
-    if (!visible) 
+    if (!visible || !card) 
         return null;
 
     return (
         <Modal animationType="slide" transparent={true} visible={visible}>
             <View style={styles.popupContainer}>
                 <View style={styles.popupContent}>
-                    <Text>
-                        {`Part: ${card.part}`}
-                    </Text>
-
-                    <Text>
-                        {`Fact: ${card.fact}`}
-                    </Text>
+                    <Text>{`Part: ${card.part}`}</Text>
+                    {card.facts.map((fact, index) => (
+                        <Text key={index}>{`Fact ${index + 1}: ${fact}`}</Text>
+                    ))}
                     <Button title="Close" onPress={onClose} />
-
                 </View>
             </View>
         </Modal>
@@ -32,7 +38,7 @@ const CardPopup = ({ visible, card, onClose }) => {
 };
 
 export default class AnatPage extends Component {
-   constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
             selectedPart: null,
@@ -52,32 +58,28 @@ export default class AnatPage extends Component {
                 ElPaso: [
                     "El Paso  is the 24th largest city in the United States and the sixth largest city in Texas as of 2020, with a population of 684,753. El Paso is the largest American city on the Mexican border and is situated on the left bank of the Rio Grande, which here defines the state of Texas' western border with Mexico."
                 ],
-
-
-                // Add more body parts and facts as needed
             },
-            flashcards: [], // Array to store flashcards
+            flashcards: [],
             isCardPopupVisible: false,
             selectedCard: null,
         };
     }
 
-    handleBodyPartClick = (part) => {
-        if(this.state.selectedPart) {
-            this.setState({ isCardPopupVisible: false, selectedCard: null, selectedPart: null });
-        } else {
-            this.setState({ selectedPart: part });
-        }
+    handleCardClick = (card) => {
+        // Ensure card data is correctly set
+        console.log("Selected card:", card);
+        this.setState({ isCardPopupVisible: true, selectedCard: card });
     };
 
     handleAddToFlashcards = () => {
         if (this.state.selectedPart && this.state.facts[this.state.selectedPart]) {
-            const newFlashcard = {
+            const newFlashcards = this.state.facts[this.state.selectedPart].map((fact, index) => ({
                 part: this.state.selectedPart,
-                fact: this.state.facts[this.state.selectedPart][0], // Assuming you add the first fact by default
-            };
+                fact: fact,
+                id: `${this.state.selectedPart}-${index}`, // Unique ID for each fact
+            }));
             this.setState((prevState) => ({
-                flashcards: [...prevState.flashcards, newFlashcard],
+                flashcards: [...prevState.flashcards, ...newFlashcards],
             }));
         }
     };
@@ -90,17 +92,12 @@ export default class AnatPage extends Component {
         this.setState({ isCardPopupVisible: false, selectedCard: null });
     };
 
-
     render() {
         const { handleHomePageDisplay } = this.props;
-        const { selectedPart, facts, isCardPopupVisible, selectedCard } = this.state;
+        const { isCardPopupVisible, selectedCard } = this.state;
 
         return (
             <View style={styles.container}>
-
-                
-
-
                 <View style={styles.anatPage}>
                     <View style={styles.goButt}>
                         <TouchableOpacity onPress={handleHomePageDisplay}>
@@ -115,19 +112,20 @@ export default class AnatPage extends Component {
                     </View>
                 </View>
 
-                <Image source={Texas} style={{ width: deviceWidth/2, height: deviceHeight }} />
+                <ImageBackground source={Texas} style={{ width: deviceWidth, height: deviceHeight }}>
 
                 <View style={styles.bodyContainer}>
-                    {/* Overlay touchable components on top of the image */}
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('Houston')} style={[styles.bodyPartTouchable, { width: 60, height: 40, top:100, left:50 }]}>
-                        <Image source={LocationPin} style={styles.bodyPartImage} />
-                    </TouchableOpacity>
-                    {/* Add more touchable components for other body parts as needed */}
+                    {Object.keys(locationCoordinates).map((location, index) => (
+                        <TouchableOpacity 
+                            key={index} 
+                            onPress={() => this.handleBodyPartClick(location)} 
+                            style={[styles.bodyPartTouchable, { left: locationCoordinates[location].x, top: locationCoordinates[location].y }]}>
+                            <Image source={LocationPin} style={styles.bodyPartImage} />
+                        </TouchableOpacity>
+                    ))}
                 </View>
+                </ImageBackground>
 
-                
-               
-                
 
                 {/* Popup for displaying card */}
                 <CardPopup
