@@ -1,29 +1,133 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal, Button } from 'react-native';
 import styles from './styles';
 
-export default class GeoPage extends Component {
-    
+import Texas from './assets/Texas.png';
+import LocationPin from './assets/LocationPin.png';
+
+
+const CardPopup = ({ visible, card, onClose }) => {
+    if (!visible) 
+        return null;
+
+    return (
+        <Modal animationType="slide" transparent={true} visible={visible}>
+            <View style={styles.popupContainer}>
+                <View style={styles.popupContent}>
+                    <Text>
+                        {`Part: ${card.part}`}
+                    </Text>
+
+                    <Text>
+                        {`Fact: ${card.fact}`}
+                    </Text>
+                    <Button title="Close" onPress={onClose} />
+
+                </View>
+            </View>
+        </Modal>
+    );
+};
+
+export default class AnatPage extends Component {
+   constructor(props) {
+        super(props);
+        this.state = {
+            selectedPart: null,
+            facts: {
+                lung: [
+                    "The lungs, located in the chest cavity, are vital for breathing. They allow oxygen to enter the bloodstream while removing carbon dioxide."
+                ],
+                heart: [
+                    "The heart, a muscular organ, tirelessly pumps blood throughout the body. It consists of four chambers: two atria (upper chambers) and two ventricles (lower chambers).The rhythmic contractions of the heart (heartbeat) ensure efficient blood circulation."
+                ],
+                stomach: [
+                    "Situated in the upper abdomen, the stomach plays a crucial role in digestion.It receives food from the esophagus and breaks it down using gastric juices.The stomach’s muscular walls churn and mix the food, transforming it into a semi-liquid substance called chyme."
+                ],
+                liver: [
+                    "Liver performs various vital functions, including detoxification, metabolism, and production of bile. Bile aids in digesting fats and is stored in the gallbladder."
+                ],
+                intestines: [
+                    "The intestines consist of two parts: the small intestine and the large intestine (colon). The small intestine absorbs nutrients from digested food. The large intestine absorbs water and electrolytes, ultimately forming feces for elimination."
+                ],
+
+
+                // Add more body parts and facts as needed
+            },
+            flashcards: [], // Array to store flashcards
+            isCardPopupVisible: false,
+            selectedCard: null,
+        };
+    }
+
+    handleBodyPartClick = (part) => {
+        if(this.state.selectedPart) {
+            this.setState({ isCardPopupVisible: false, selectedCard: null, selectedPart: null });
+        } else {
+            this.setState({ selectedPart: part });
+        }
+    };
+
+    handleAddToFlashcards = () => {
+        if (this.state.selectedPart && this.state.facts[this.state.selectedPart]) {
+            const newFlashcard = {
+                part: this.state.selectedPart,
+                fact: this.state.facts[this.state.selectedPart][0], // Assuming you add the first fact by default
+            };
+            this.setState((prevState) => ({
+                flashcards: [...prevState.flashcards, newFlashcard],
+            }));
+        }
+    };
+
+    handleCardClick = (card) => {
+        this.setState({ isCardPopupVisible: true, selectedCard: card });
+    };
+
+    handleClosePopup = () => {
+        this.setState({ isCardPopupVisible: false, selectedCard: null });
+    };
+
 
     render() {
-        const { handleHomePageDisplay } = this.props; //set props to use
+        const { handleHomePageDisplay } = this.props;
+        const { selectedPart, facts, isCardPopupVisible, selectedCard } = this.state;
+
         return (
             <View style={styles.container}>
-                    <View style={styles.geoPage}>
-                        <View style={styles.goButt}>
-                            <TouchableHighlight onPress={handleHomePageDisplay}>
-                                <Text style={styles.homeText}>
-                                    ← Back to Home
-                                </Text>
-                            </TouchableHighlight>
-                        </View>
-                        <View style={styles.GeoText}>
-                            Geography
-                        </View>
-                        <View style={styles.studyText}>
-                            Study Set
-                        </View>
+
+                    <Image
+                        source={{Texas}}
+                    >
+                    </Image>
+
+
+
+
+                <View style={styles.anatPage}>
+                    <View style={styles.goButt}>
+                        <TouchableOpacity onPress={handleHomePageDisplay}>
+                            <Text style={styles.homeText}>← Back to Home</Text>
+                        </TouchableOpacity>
                     </View>
+                    <View style={styles.anatText}>
+                        Anatomy
+                    </View>
+                    <View style={styles.studyText}>
+                        Study Set
+                    </View>
+                </View>
+
+                
+               
+                
+
+                {/* Popup for displaying card */}
+                <CardPopup
+                    visible={isCardPopupVisible}
+                    card={selectedCard}
+                    onClose={this.handleClosePopup}
+                />
             </View>
         );
     }

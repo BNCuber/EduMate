@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Modal, Button } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal, Button,Dimensions } from 'react-native';
 import styles from './styles';
 
-import human from './assets/humanBody.png';
+import heart from './assets/heart.PNG';
+import liver from './assets/liver.PNG';
+import lung from './assets/lungs.PNG';
+import stomach from './assets/stomach.PNG';
+import intestine from './assets/intestine.PNG';
+
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
 const CardPopup = ({ visible, card, onClose }) => {
     if (!visible) 
@@ -33,11 +40,23 @@ export default class AnatPage extends Component {
         this.state = {
             selectedPart: null,
             facts: {
-                brain: [
-                    "The brain is the control center of the body.",
-                    "It weighs about 3 pounds.",
-                    // Add more facts as needed
+                lung: [
+                    "The lungs, located in the chest cavity, are vital for breathing. They allow oxygen to enter the bloodstream while removing carbon dioxide."
                 ],
+                heart: [
+                    "The heart, a muscular organ, tirelessly pumps blood throughout the body. It consists of four chambers: two atria (upper chambers) and two ventricles (lower chambers).The rhythmic contractions of the heart (heartbeat) ensure efficient blood circulation."
+                ],
+                stomach: [
+                    "Situated in the upper abdomen, the stomach plays a crucial role in digestion.It receives food from the esophagus and breaks it down using gastric juices.The stomach’s muscular walls churn and mix the food, transforming it into a semi-liquid substance called chyme."
+                ],
+                liver: [
+                    "Liver performs various vital functions, including detoxification, metabolism, and production of bile. Bile aids in digesting fats and is stored in the gallbladder."
+                ],
+                intestine: [
+                    "The intestines consist of two parts: the small intestine and the large intestine (colon). The small intestine absorbs nutrients from digested food. The large intestine absorbs water and electrolytes, ultimately forming feces for elimination."
+                ],
+
+
                 // Add more body parts and facts as needed
             },
             flashcards: [], // Array to store flashcards
@@ -98,10 +117,34 @@ export default class AnatPage extends Component {
                 {/* Display Human Body */}
                 <View style={styles.bodyContainer}>
                     {/* Overlay touchable components on top of the image */}
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('brain')} style={[styles.bodyPartTouchable, { left: 50, top: 100, width: 60, height: 40 }]}>
-                        <Image source={human} style={styles.bodyPartImage} />
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={lung} style={styles.bodyPartImage} />
                     </TouchableOpacity>
                     {/* Add more touchable components for other body parts as needed */}
+                </View>
+
+                <View style={styles.bodyContainer}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('heart')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                    <Image source={heart} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.bodyContainer}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('stomach')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={stomach} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.bodyContainer}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('intestine')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={intestine} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.bodyContainer}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('liver')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={liver} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
                 </View>
 
                 {/* Display Facts */}
