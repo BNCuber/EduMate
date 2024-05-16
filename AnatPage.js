@@ -16,15 +16,15 @@ const CardPopup = ({ visible, card, onClose }) => {
         return null;
 
     return (
-        <Modal animationType="slide" transparent={true} visible={visible}>
+        <Modal transparent={true} visible={visible}>
             <View style={styles.popupContainer}>
                 <View style={styles.popupContent}>
                     <Text>
-                        {`Part: ${card.part}`}
+                        {`${card.part}`}
                     </Text>
 
                     <Text>
-                        {`Fact: ${card.fact}`}
+                        {`${card.fact}`}
                     </Text>
                     <Button title="Close" onPress={onClose} />
 
@@ -55,11 +55,9 @@ export default class AnatPage extends Component {
                 intestine: [
                     "The intestines consist of two parts: the small intestine and the large intestine (colon). The small intestine absorbs nutrients from digested food. The large intestine absorbs water and electrolytes, ultimately forming feces for elimination."
                 ],
-
-
-                // Add more body parts and facts as needed
+                
             },
-            flashcards: [], // Array to store flashcards
+            flashcards: [], 
             isCardPopupVisible: false,
             selectedCard: null,
         };
@@ -77,7 +75,7 @@ export default class AnatPage extends Component {
         if (this.state.selectedPart && this.state.facts[this.state.selectedPart]) {
             const newFlashcard = {
                 part: this.state.selectedPart,
-                fact: this.state.facts[this.state.selectedPart][0], // Assuming you add the first fact by default
+                fact: this.state.facts[this.state.selectedPart][0], 
             };
             this.setState((prevState) => ({
                 flashcards: [...prevState.flashcards, newFlashcard],
@@ -114,13 +112,13 @@ export default class AnatPage extends Component {
                     </View>
                 </View>
 
-                {/* Display Human Body */}
+                
                 <View style={styles.bodyContainer}>
-                    {/* Overlay touchable components on top of the image */}
+                    
                     <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
                         <Image source={lung} style={styles.bodyPartImage} />
                     </TouchableOpacity>
-                    {/* Add more touchable components for other body parts as needed */}
+                    
                 </View>
 
                 <View style={styles.bodyContainer}>
@@ -147,7 +145,7 @@ export default class AnatPage extends Component {
                     </TouchableOpacity>
                 </View>
 
-                {/* Display Facts */}
+                
                 {selectedPart && (
                     <View style={styles.factsContainer}>
                         <Text>{`Facts about ${selectedPart}:`}</Text>
@@ -160,10 +158,7 @@ export default class AnatPage extends Component {
                     </View>
                 )}
 
-               
                 
-
-                {/* Popup for displaying card */}
                 <CardPopup
                     visible={isCardPopupVisible}
                     card={selectedCard}
