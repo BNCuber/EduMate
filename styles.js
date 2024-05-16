@@ -289,7 +289,37 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
 
+  codeNavbar: {
+    flexDirection: 'row',
+  },
 
+  codeText: {
+    flexDirection: 'column',
+  },
+
+  prev: {
+    alignSelf: 'left',
+    marginRight: (3 * deviceWidth / 9),
+    marginLeft: 0,
+    width:  deviceWidth / 10,
+  },
+
+  next: {
+    alignSelf: 'right',
+    width:  deviceWidth / 10,
+    marginLeft: (3 * deviceWidth / 9),
+    marginRight: 0,
+  },
+
+  codeBarTextRight: {
+    textAlign: 'right',
+    fontSize: 25,
+  },
+
+  codeBarTextLeft: {
+    textAlign: 'left',
+    fontSize: 25,
+  },
   });
 
   export default styles;

@@ -96,11 +96,10 @@ export default class AnatPage extends Component {
         return (
             <View style={styles.container}>
 
-                    <ImageBackground
-                        source={{ uri: '' }}
+                    <Image
+                        source={{Texas}}
                     >
-
-                    </ImageBackground>
+                    </Image>
 
 
 
