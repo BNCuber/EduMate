@@ -47,7 +47,11 @@ export default class AnatPage extends Component {
     }
 
     handleBodyPartClick = (part) => {
-        this.setState({ selectedPart: part });
+        if(this.state.selectedPart) {
+            this.setState({ isCardPopupVisible: false, selectedCard: null, selectedPart: null });
+        } else {
+            this.setState({ selectedPart: part });
+        }
     };
 
     handleAddToFlashcards = () => {

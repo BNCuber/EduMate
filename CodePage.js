@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableHighlight, Image } from 'react-native';
+import { Text, View, TouchableHighlight, Image, ImageBackground } from 'react-native';
 import styles from './styles';
 
 export default class CodePage extends Component {
@@ -18,11 +18,31 @@ export default class CodePage extends Component {
                             <Text style={styles.RealStudy}>Study Set</Text>
                         </View>
 
+                        <View style={styles.array}>
                         <View style={styles.CSCover}>
-                            <Image
+                            <ImageBackground
+                                source={{ uri: './assets/array.png' }}
+                                style={{ height: 300, width: 1000, marginLeft: 10, marginRight: 5 }}
+                            />
+                        </View>
+                        </View>
+
+                        <View style={styles.stack}>
+                        <View style={styles.CSCover}>
+                            <ImageBackground
+                                source={{ uri: './assets/stack.png' }}
+                                style={{ height: 300, width: 1000, marginLeft: 10, marginRight: 5 }}
+                            />
+                        </View>
+                        </View>
+
+                        <View style={styles.heap}>
+                        <View style={styles.CSCover}>
+                            <ImageBackground
                                 source={{ uri: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726162247/Array-data-structure.png' }}
                                 style={{ height: 300, width: 1000, marginLeft: 10, marginRight: 5 }}
                             />
+                        </View>
                         </View>
 
                         <View style={styles.goButt}>
