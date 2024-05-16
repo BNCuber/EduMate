@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Modal, Button,Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal, Button, Dimensions } from 'react-native';
 import styles from './styles';
 
 import heart from './assets/heart.PNG';

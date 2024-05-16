@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Modal, Button } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal, Button, Dimensions } from 'react-native';
 import styles from './styles';
 
 import Texas from './assets/Texas.png';
 import LocationPin from './assets/LocationPin.png';
 
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
 const CardPopup = ({ visible, card, onClose }) => {
     if (!visible) 
@@ -96,10 +98,7 @@ export default class AnatPage extends Component {
         return (
             <View style={styles.container}>
 
-                    <Image
-                        source={{Texas}}
-                    >
-                    </Image>
+                <Image source={Texas} style={{ width: deviceWidth, height: deviceHeight }} />
 
 
 
@@ -111,7 +110,7 @@ export default class AnatPage extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={styles.anatText}>
-                        Anatomy
+                        Geography
                     </View>
                     <View style={styles.studyText}>
                         Study Set
