@@ -65,37 +65,7 @@ export default class HomePage extends Component {
                     </ScrollView> 
 
                     
-                     <View style={styles.navbar}>
-                        <TouchableHighlight
-                            style={styles.buttonWrapper}
-                            onPress={this.handleNewPageDisplay}
-                            underlayColor="#FFFFFF"
-                        >
-                            <View style={styles.addButtonWrapper}>
-                                <View style={styles.homebutton}>
-                                </View>
-                                <Text style={styles.text}>
-                                    +
-                                </Text>
-                            </View>
-                        </TouchableHighlight>
-
-                        <TouchableHighlight
-                            style={styles.buttonWrapper}
-                            onPress={this.handleCodePageDisplay}
-                            underlayColor="#FFFFFF"
-                        >
-                            <View style={styles.libraryButton}>
-                                <View style={styles.library}>
-                                    *
-                                </View>
-                                <Text style={styles.yourLibrary}>
-                                    Your Collection
-                                </Text>
-                            </View>
-                        </TouchableHighlight> 
-                        
-                    </View> 
+                     
                 </View>  
             </View>
         );

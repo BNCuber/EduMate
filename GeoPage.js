@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Modal, Button, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal, Button, Dimensions, ImageBackground } from 'react-native';
 import styles from './styles';
 
 import Texas from './assets/Texas.png';
@@ -8,31 +8,37 @@ import LocationPin from './assets/LocationPin.png';
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
 
+
+const locationCoordinates = {
+    Houston: { x: deviceWidth * 0.7, y: deviceHeight * 0.6 },
+    DallasFW: { x: deviceWidth * 0.62, y: deviceHeight * 0.30 },
+    Austin: { x: deviceWidth * 0.55, y: deviceHeight * 0.45 },
+    SanAntonio: { x: deviceWidth * 0.5, y: deviceHeight * 0.6 },
+    ElPaso: { x: deviceWidth * 0.00005, y: deviceHeight * 0.4 },
+    
+};
+
 const CardPopup = ({ visible, card, onClose }) => {
-    if (!visible) 
+    if (!visible || !card) 
         return null;
 
     return (
-        <Modal animationType="slide" transparent={true} visible={visible}>
+        <Modal transparent={true} visible={visible}>
             <View style={styles.popupContainer}>
                 <View style={styles.popupContent}>
-                    <Text>
-                        {`Part: ${card.part}`}
-                    </Text>
-
-                    <Text>
-                        {`Fact: ${card.fact}`}
-                    </Text>
+                    <Text>{`${card.part}`}</Text>
+                    {card.facts.map((fact, index) => (
+                        <Text key={index}>{`${fact}`}</Text>
+                    ))}
                     <Button title="Close" onPress={onClose} />
-
                 </View>
             </View>
         </Modal>
     );
 };
 
-export default class AnatPage extends Component {
-   constructor(props) {
+export default class GeoPage extends Component {
+    constructor(props) {
         super(props);
         this.state = {
             selectedPart: null,
@@ -52,84 +58,60 @@ export default class AnatPage extends Component {
                 ElPaso: [
                     "El Paso  is the 24th largest city in the United States and the sixth largest city in Texas as of 2020, with a population of 684,753. El Paso is the largest American city on the Mexican border and is situated on the left bank of the Rio Grande, which here defines the state of Texas' western border with Mexico."
                 ],
-
-
-                // Add more body parts and facts as needed
             },
-            flashcards: [], // Array to store flashcards
             isCardPopupVisible: false,
             selectedCard: null,
         };
     }
 
-    handleBodyPartClick = (part) => {
-        if(this.state.selectedPart) {
-            this.setState({ isCardPopupVisible: false, selectedCard: null, selectedPart: null });
-        } else {
-            this.setState({ selectedPart: part });
-        }
-    };
-
-    handleAddToFlashcards = () => {
-        if (this.state.selectedPart && this.state.facts[this.state.selectedPart]) {
-            const newFlashcard = {
-                part: this.state.selectedPart,
-                fact: this.state.facts[this.state.selectedPart][0], // Assuming you add the first fact by default
-            };
-            this.setState((prevState) => ({
-                flashcards: [...prevState.flashcards, newFlashcard],
-            }));
-        }
-    };
-
-    handleCardClick = (card) => {
-        this.setState({ isCardPopupVisible: true, selectedCard: card });
+    handleBodyPartClick = (location) => {
+        const selectedPart = location;
+        const selectedFacts = this.state.facts[selectedPart];
+        const selectedCard = {
+            part: selectedPart,
+            facts: selectedFacts,
+        };
+        this.setState({ isCardPopupVisible: true, selectedCard: selectedCard });
     };
 
     handleClosePopup = () => {
         this.setState({ isCardPopupVisible: false, selectedCard: null });
     };
 
-
     render() {
         const { handleHomePageDisplay } = this.props;
-        const { selectedPart, facts, isCardPopupVisible, selectedCard } = this.state;
-
+        const { isCardPopupVisible, selectedCard } = this.state;
+    
         return (
             <View style={styles.container}>
-
-                
-
-
-                <View style={styles.anatPage}>
+                <View style={styles.geoPage}>
                     <View style={styles.goButt}>
                         <TouchableOpacity onPress={handleHomePageDisplay}>
                             <Text style={styles.homeText}>← Back to Home</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.anatText}>
+                    <View style={styles.geoText}>
                         Geography
                     </View>
                     <View style={styles.studyText}>
                         Study Set
                     </View>
                 </View>
-
-                <Image source={Texas} style={{ width: deviceWidth/2, height: deviceHeight }} />
-
-                <View style={styles.bodyContainer}>
-                    {/* Overlay touchable components on top of the image */}
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('Houston')} style={[styles.bodyPartTouchable, { width: 60, height: 40, top:100, left:50 }]}>
-                        <Image source={LocationPin} style={styles.bodyPartImage} />
-                    </TouchableOpacity>
-                    {/* Add more touchable components for other body parts as needed */}
-                </View>
-
+    
+                <ImageBackground source={Texas} style={{ width: deviceWidth, height: deviceHeight }}>
+                    <View style={styles.bodyContainer}>
+                        {Object.keys(locationCoordinates).map((location, index) => (
+                            <TouchableOpacity 
+                                key={index} 
+                                onPress={() => this.handleBodyPartClick(location)} 
+                                style={[styles.bodyPartTouchable, { left: locationCoordinates[location].x, top: locationCoordinates[location].y }]}>
+                                <Image source={LocationPin} style={styles.bodyPartImage} />
+                            </TouchableOpacity>
+                        ))}
+                    </View>
+                </ImageBackground>
+    
                 
-               
-                
-
-                {/* Popup for displaying card */}
                 <CardPopup
                     visible={isCardPopupVisible}
                     card={selectedCard}

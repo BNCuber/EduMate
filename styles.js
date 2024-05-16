@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
       height: 100,
       width: deviceWidth*9,
       textAlign: 'center',
-      borderWidth: 1,
+      
       alignItems: 'center',
       
     },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     
   
     bottomText: {
-      borderWidth: 1,
+      
       width: deviceWidth*.9,
       height: 65,
       alignItems: 'center',
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     titleLine: {
       flexDirection: 'row',
       marginTop: 10,
-      borderWidth: 1,
+      
       width: deviceWidth*.9,
       justifyContent:'center',
       alignText:'center',
@@ -222,24 +222,16 @@ const styles = StyleSheet.create({
       right: 0,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent black background
+      backgroundColor: 'rgba(0, 0, 0, 0.2)', 
     },
-
+  
     popupContent: {
-    width: '80%', // Adjust as needed
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 3,
+      width: '80%', 
+      
+      padding: 20,
+      borderRadius: 10,
+      alignItems: 'center',
     },
-    shadowOpacity: 0.27,
-    shadowRadius: 4.65,
-    elevation: 6,
-  },
 
   closeBtn: {
     position: 'absolute',
@@ -256,12 +248,12 @@ const styles = StyleSheet.create({
   },
 
   bodyContainer: {
-    flexDirection: 'row', // Align body parts horizontally
-    justifyContent: 'space-around', // Add space around each body part
+    flexDirection: 'row', 
+    justifyContent: 'space-around', 
     marginBottom: 20,
-    marginHorizontal: 'auto', // Center the container horizontally
-    width: '80%', // Adjust width as needed
-    marginTop: 20 // Add margin at the top
+    marginHorizontal: 'auto', 
+    width: '80%', 
+    marginTop: 20 
 },
 
   bodyPartTouchable: {
@@ -352,6 +344,11 @@ closeText: {
     fontSize: 16,
     color: '#007BFF',
 },
+
+  bodyPartColumn: {
+    alignItems: 'center',
+  },
+  
   });
 
   export default styles;
