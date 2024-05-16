@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Image, Modal, Button } from 'react-native';
 import styles from './styles';
 
-import human from './assets/humanBody.png';
 import heart from './assets/heart.PNG';
+import liver from './assets/liver.PNG';
+import lung from './assets/lungs.PNG';
+import stomach from './assets/stomach.PNG';
+import intestine from './assets/intestine.PNG';
 
 const CardPopup = ({ visible, card, onClose }) => {
     if (!visible) 
@@ -46,7 +49,7 @@ export default class AnatPage extends Component {
                 liver: [
                     "Liver performs various vital functions, including detoxification, metabolism, and production of bile. Bile aids in digesting fats and is stored in the gallbladder."
                 ],
-                intestines: [
+                intestine: [
                     "The intestines consist of two parts: the small intestine and the large intestine (colon). The small intestine absorbs nutrients from digested food. The large intestine absorbs water and electrolytes, ultimately forming feces for elimination."
                 ],
 
@@ -116,6 +119,8 @@ export default class AnatPage extends Component {
                     </TouchableOpacity>
                     {/* Add more touchable components for other body parts as needed */}
                 </View>
+
+                
 
                 {/* Display Facts */}
                 {selectedPart && (
