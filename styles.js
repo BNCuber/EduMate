@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     marginHorizontal: 'auto', 
     width: '80%', 
-    marginTop: 20 
+    marginTop: 80, 
 },
 
   bodyPartTouchable: {
@@ -263,16 +263,35 @@ const styles = StyleSheet.create({
   },
 
   bodyPartImage: {
+    width: 100,
+    height: 100,
+    borderWidth: 2,
+  },
+  
+  texasContainer: {
+    flexDirection: 'row', 
+    justifyContent: 'space-around', 
+    marginBottom: 20,
+    marginHorizontal: 'auto', 
+    //width: '80%', 
+    
+     
+
+  },
+  pinImage:{
     width: 50,
     height: 50,
   },
+  
   factsContainer: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginTop: 20,
     borderWidth: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   flashcardsContainer: {
     marginBottom: 20,
+    //backgroundColor: 'rgba(0, 0, 0, 0.2)',
   },
   goButt: {
     backgroundColor: 'lightgrey',

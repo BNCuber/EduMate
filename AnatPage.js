@@ -115,32 +115,32 @@ export default class AnatPage extends Component {
                 
                 <View style={styles.bodyContainer}>
                     
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { width: 75, height: 75 }]}>
                         <Image source={lung} style={styles.bodyPartImage} />
                     </TouchableOpacity>
                     
                 </View>
 
                 <View style={styles.bodyContainer}>
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('heart')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('heart')} style={[styles.bodyPartTouchable, { width: 75, height: 75 }]}>
                     <Image source={heart} style={styles.bodyPartImage} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.bodyContainer}>
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('stomach')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('stomach')} style={[styles.bodyPartTouchable, { width: 75, height: 75 }]}>
                         <Image source={stomach} style={styles.bodyPartImage} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.bodyContainer}>
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('intestine')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('intestine')} style={[styles.bodyPartTouchable, { width: 75, height: 75 }]}>
                         <Image source={intestine} style={styles.bodyPartImage} />
                     </TouchableOpacity>
                 </View>
 
                 <View style={styles.bodyContainer}>
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('liver')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('liver')} style={[styles.bodyPartTouchable, { width: 75, height: 75 }]}>
                         <Image source={liver} style={styles.bodyPartImage} />
                     </TouchableOpacity>
                 </View>
@@ -152,9 +152,7 @@ export default class AnatPage extends Component {
                         {facts[selectedPart].map((fact, index) => (
                             <Text key={index}>{fact}</Text>
                         ))}
-                        <TouchableOpacity onPress={this.handleAddToFlashcards}>
-                            <Text>Add to Flashcards</Text>
-                        </TouchableOpacity>
+                        
                     </View>
                 )}
 

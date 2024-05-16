@@ -64,7 +64,7 @@ export default class GeoPage extends Component {
         };
     }
 
-    handleBodyPartClick = (location) => {
+    handlePinClick = (location) => {
         const selectedPart = location;
         const selectedFacts = this.state.facts[selectedPart];
         const selectedCard = {
@@ -98,14 +98,14 @@ export default class GeoPage extends Component {
                     </View>
                 </View>
     
-                <ImageBackground source={Texas} style={{ width: 2 * deviceWidth / 4, height: deviceHeight }}>
-                    <View style={styles.bodyContainer}>
+                <ImageBackground source={Texas} style={{ width: deviceWidth, height: deviceHeight }}>
+                    <View style={styles.texasContainer}>
                         {Object.keys(locationCoordinates).map((location, index) => (
                             <TouchableOpacity 
                                 key={index} 
-                                onPress={() => this.handleBodyPartClick(location)} 
+                                onPress={() => this.handlePinClick(location)} 
                                 style={[styles.bodyPartTouchable, { left: locationCoordinates[location].x, top: locationCoordinates[location].y }]}>
-                                <Image source={LocationPin} style={styles.bodyPartImage} />
+                                <Image source={LocationPin} style={styles.pinImage} />
                             </TouchableOpacity>
                         ))}
                     </View>
