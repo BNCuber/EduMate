@@ -1,7 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { imageH } from './CodePage'
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
+const imageHeight = imageH;
 
 
 const styles = StyleSheet.create({
@@ -320,6 +322,10 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     fontSize: 25,
   },
+  column: {
+    width: deviceWidth / 10,
+    height: imageHeight,
+  }
   });
 
   export default styles;

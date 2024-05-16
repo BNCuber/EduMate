@@ -6,6 +6,7 @@ import stack1 from './assets/stack.png';
 
 const deviceHeight = Dimensions.get('window').height;
 const deviceWidth = Dimensions.get('window').width;
+var imageH;
 
 export default class CodePage extends Component {
     state = {
@@ -90,7 +91,25 @@ export default class CodePage extends Component {
                             <ImageBackground
                                 source={array1}
                                 style={{ height: deviceHeight / 4, width: 2 * deviceWidth / 3, marginLeft: 10, marginRight: 5 }}
-                            />
+                            >
+                                <View style={styles.column}>
+                                    <View style={styles.row}>
+
+                                    </View>
+                                    <View style={styles.row}>
+
+                                    </View>
+                                    <View style={styles.row}>
+
+                                    </View>
+                                    <View style={styles.row}>
+
+                                    </View>
+                                    <View style={styles.row}>
+
+                                    </View>
+                                </View>
+                            </ImageBackground>
                         </View>
                     </View>
 
@@ -98,8 +117,9 @@ export default class CodePage extends Component {
                         <View style={styles.CSCover}>
                             <ImageBackground
                                 source={stack1}
-                                style={{ deviceHeight / 3, width: 2 * deviceWidth / 3, marginLeft: 10, marginRight: 5 }}
-                            />
+                                style={{ height: deviceHeight / 3, width: 2 * deviceWidth / 3, marginLeft: 10, marginRight: 5 }}
+                            >
+                            </ImageBackground>
                         </View>
                     </View>
 
