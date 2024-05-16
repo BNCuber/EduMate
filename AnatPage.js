@@ -120,6 +120,14 @@ export default class AnatPage extends Component {
                     {/* Add more touchable components for other body parts as needed */}
                 </View>
 
+                <View style={styles.bodyContainer}>
+                    {/* Overlay touchable components on top of the image */}
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { left: 50, top: 100, width: 60, height: 40 }]}>
+                        <Image source={human} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
+                    {/* Add more touchable components for other body parts as needed */}
+                </View>
+
                 
 
                 {/* Display Facts */}
