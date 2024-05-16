@@ -260,13 +260,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
   },
 
   bodyPartImage: {
     width: 50,
     height: 50,
-    borderWidth: 2,
   },
   factsContainer: {
     alignItems: 'center',
@@ -334,6 +332,7 @@ modalContent: {
     padding: 20,
     backgroundColor: '#fff',
     borderRadius: 10,
+    borderColor: '#fff',
     alignItems: 'center',
 },
 modalText: {

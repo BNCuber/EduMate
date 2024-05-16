@@ -111,7 +111,6 @@ export default class CodePage extends Component {
                             left: j * cellWidth,
                             height: cellHeight,
                             width: cellWidth,
-                            borderWidth: 1,
                             borderColor: 'rgba(255, 255, 255, 0.3)',
                         }}
                         onPress={() => this.showModal({ row: i, col: j })}

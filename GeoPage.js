@@ -10,10 +10,10 @@ const deviceWidth = Dimensions.get('window').width;
 
 
 const locationCoordinates = {
-    Houston: { x: deviceWidth * 0.7, y: deviceHeight * 0.6 },
-    DallasFW: { x: deviceWidth * 0.62, y: deviceHeight * 0.30 },
-    Austin: { x: deviceWidth * 0.55, y: deviceHeight * 0.45 },
-    SanAntonio: { x: deviceWidth * 0.5, y: deviceHeight * 0.6 },
+    Houston: { x: deviceWidth * 0.35, y: deviceHeight * 0.6 },
+    DallasFW: { x: deviceWidth * 0.31, y: deviceHeight * 0.30 },
+    Austin: { x: deviceWidth * 0.275, y: deviceHeight * 0.45 },
+    SanAntonio: { x: deviceWidth * 0.2, y: deviceHeight * 0.6 },
     ElPaso: { x: deviceWidth * 0.00005, y: deviceHeight * 0.4 },
     
 };
@@ -98,7 +98,7 @@ export default class GeoPage extends Component {
                     </View>
                 </View>
     
-                <ImageBackground source={Texas} style={{ width: deviceWidth, height: deviceHeight }}>
+                <ImageBackground source={Texas} style={{ width: 2 * deviceWidth / 4, height: deviceHeight }}>
                     <View style={styles.bodyContainer}>
                         {Object.keys(locationCoordinates).map((location, index) => (
                             <TouchableOpacity 
