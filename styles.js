@@ -254,22 +254,30 @@ const styles = StyleSheet.create({
   },
 
   bodyContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: 'row', // Align body parts horizontally
+    justifyContent: 'space-around', // Add space around each body part
     marginBottom: 20,
-  },
+    marginHorizontal: 'auto', // Center the container horizontally
+    width: '80%', // Adjust width as needed
+    marginTop: 20 // Add margin at the top
+},
+
   bodyPartTouchable: {
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 2,
   },
+
   bodyPartImage: {
-    width: 300,
-    height: 600,
+    width: 50,
+    height: 50,
+    borderWidth: 2,
   },
   factsContainer: {
     alignItems: 'center',
     marginBottom: 20,
+    borderWidth: 1,
   },
   flashcardsContainer: {
     marginBottom: 20,

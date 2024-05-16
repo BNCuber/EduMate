@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, Modal, Button } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Modal, Button,Dimensions } from 'react-native';
 import styles from './styles';
 
 import heart from './assets/heart.PNG';
@@ -7,6 +7,9 @@ import liver from './assets/liver.PNG';
 import lung from './assets/lungs.PNG';
 import stomach from './assets/stomach.PNG';
 import intestine from './assets/intestine.PNG';
+
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
 
 const CardPopup = ({ visible, card, onClose }) => {
     if (!visible) 
@@ -114,21 +117,35 @@ export default class AnatPage extends Component {
                 {/* Display Human Body */}
                 <View style={styles.bodyContainer}>
                     {/* Overlay touchable components on top of the image */}
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { left: 50, top: 100, width: 60, height: 40 }]}>
-                        <Image source={human} style={styles.bodyPartImage} />
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={lung} style={styles.bodyPartImage} />
                     </TouchableOpacity>
                     {/* Add more touchable components for other body parts as needed */}
                 </View>
 
                 <View style={styles.bodyContainer}>
-                    {/* Overlay touchable components on top of the image */}
-                    <TouchableOpacity onPress={() => this.handleBodyPartClick('lung')} style={[styles.bodyPartTouchable, { left: 50, top: 100, width: 60, height: 40 }]}>
-                        <Image source={human} style={styles.bodyPartImage} />
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('heart')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                    <Image source={heart} style={styles.bodyPartImage} />
                     </TouchableOpacity>
-                    {/* Add more touchable components for other body parts as needed */}
                 </View>
 
-                
+                <View style={styles.bodyContainer}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('stomach')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={stomach} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.bodyContainer}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('intestine')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={intestine} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.bodyContainer}>
+                    <TouchableOpacity onPress={() => this.handleBodyPartClick('liver')} style={[styles.bodyPartTouchable, { width: 60, height: 40 }]}>
+                        <Image source={liver} style={styles.bodyPartImage} />
+                    </TouchableOpacity>
+                </View>
 
                 {/* Display Facts */}
                 {selectedPart && (
