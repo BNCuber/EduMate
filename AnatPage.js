@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, Image, Modal, Button } from 'react-native
 import styles from './styles';
 
 import human from './assets/humanBody.png';
+import heart from './assets/heart.PNG';
 
 const CardPopup = ({ visible, card, onClose }) => {
     if (!visible) 
@@ -38,6 +39,8 @@ export default class AnatPage extends Component {
                     "It weighs about 3 pounds.",
                     // Add more facts as needed
                 ],
+
+
                 // Add more body parts and facts as needed
             },
             flashcards: [], // Array to store flashcards
