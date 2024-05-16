@@ -14,7 +14,7 @@ const locationCoordinates = {
     DallasFW: { x: deviceWidth * 0.155, y: deviceHeight * 0.30 },
     Austin: { x: deviceWidth * 0.06, y: deviceHeight * 0.45 },
     SanAntonio: { x: deviceWidth * 0.05, y: deviceHeight * 0.6 },
-    ElPaso: { x: deviceWidth * -.175, y: deviceHeight * 0.4 },
+    ElPaso: { x: deviceWidth * -.250, y: deviceHeight * 0.4 },
     
 };
 
